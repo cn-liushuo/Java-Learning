@@ -1,4 +1,4 @@
-package com.example.hello;
+package com.example.a_hello;
 
 /**
  * Java 开发的软件，功能的最小单位是一个一个的方法

@@ -1,4 +1,4 @@
-package com.example.speedkey;
+package com.example.b_speedkey;
 
 public class SpeedKeyDemo {
     public static void main(String[] args) {

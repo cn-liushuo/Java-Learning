@@ -1,4 +1,4 @@
-package com.example.comment;
+package com.example.c_comment;
 
 /**
  * 3、文档注释
