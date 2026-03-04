@@ -38,7 +38,7 @@ public class AllTest {
     // 3. 根据个人信息，计算BMR指数（把数据交给一个独立的方法，来计算并返回这个结果）
     public static double calcBMR(double height, double weight, int age, String sex) {
         double bmr = 0;
-        if("男".equals(sex)) {
+        if ("男".equals(sex)) {
             bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
         } else {
             bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
