@@ -15,7 +15,7 @@ public class I_BreakAndContinueDemo {
         }
     }
 
-     public static void test2() {
+    public static void test2() {
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
                 continue; // 跳出当前循环，继续下一次循环

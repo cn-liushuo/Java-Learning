@@ -12,7 +12,7 @@ public class H_ForForDemo {
         // 1. 定义一个循环控制打印几行。
         for (int i = 1; i <= 4; i++) {
             // 2. 定义一个循环控制打印每一行的星星。
-            for(int j = 1; j <= 5; j++) {
+            for (int j = 1; j <= 5; j++) {
                 System.out.print("*"); // 不换行打印
             }
             // 3. 打印完一行需要换行
