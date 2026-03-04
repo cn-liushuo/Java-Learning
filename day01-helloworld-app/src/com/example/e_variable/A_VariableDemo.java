@@ -1,6 +1,6 @@
 package com.example.e_variable;
 
-public class VariableDemo1 {
+public class A_VariableDemo {
     public static void main(String[] args) {
         // 目标：认识变量。
         printVariable();

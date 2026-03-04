@@ -1,6 +1,6 @@
 package com.example.a_method;
 
-public class MethodDemo1 {
+public class A_MethodDemo {
     public static void main(String[] args) {
         // 目标：掌握方法的定义和调用
         int sum = getSum(10, 20);

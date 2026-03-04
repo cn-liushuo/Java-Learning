@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class DoWhileDemo6 {
+public class F_DoWhileDemo {
     public static void main(String[] args) {
         // 目标：认识do-while循环的写法，搞清楚其执行流程
         test1();

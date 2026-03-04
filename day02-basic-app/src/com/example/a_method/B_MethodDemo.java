@@ -1,6 +1,6 @@
 package com.example.a_method;
 
-public class MethodDemo2 {
+public class B_MethodDemo {
     public static void main(String[] args) {
         // 目标：认识方法重载。
     }

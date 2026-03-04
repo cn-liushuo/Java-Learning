@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class ForForDemo8 {
+public class H_ForForDemo {
     public static void main(String[] args) {
         // 目标：搞清楚循环嵌套的流程。
         test();

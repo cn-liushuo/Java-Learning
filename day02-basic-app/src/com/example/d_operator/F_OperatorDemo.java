@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo6 {
+public class F_OperatorDemo {
     public static void main(String[] args) {
         // 目标：掌握逻辑运算符的使用
         System.out.println(isMatch(156, 55, '女')); // true

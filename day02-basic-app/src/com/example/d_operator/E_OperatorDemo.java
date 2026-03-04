@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo5 {
+public class E_OperatorDemo {
     public static void main(String[] args) {
         // 目标：三元运算符。
         print(10, 40);

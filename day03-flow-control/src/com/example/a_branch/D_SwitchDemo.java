@@ -1,6 +1,6 @@
 package com.example.a_branch;
 
-public class SwitchDemo4 {
+public class D_SwitchDemo {
     public static void main(String[] args) {
         // 目标：搞清楚switch的注意事项，穿透性的应用。
         test1();

@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo4 {
+public class D_OperatorDemo {
     public static void main(String[] args) {
         // 目标：理解关系运算符
         print(10 ,2);

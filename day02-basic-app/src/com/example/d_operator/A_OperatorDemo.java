@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo1 {
+public class A_OperatorDemo {
     public static void main(String[] args) {
         // 目标：搞清楚基本的算术运算符。
         // print(10, 2);

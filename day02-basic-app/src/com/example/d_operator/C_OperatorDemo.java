@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo3 {
+public class C_OperatorDemo {
     public static void main(String[] args) {
         // 目标：掌握扩展的赋值运算符。
         receive(5);

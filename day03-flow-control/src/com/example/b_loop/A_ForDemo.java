@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class ForDemo1 {
+public class A_ForDemo {
     public static void main(String[] args) {
         // 目标：掌握for循环的书写，搞清楚其执行流程
         test1();

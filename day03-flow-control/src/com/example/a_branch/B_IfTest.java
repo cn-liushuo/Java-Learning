@@ -1,6 +1,6 @@
 package com.example.a_branch;
 
-public class IfTest2 {
+public class B_IfTest {
     public static void main(String[] args) {
         // 目标：完成自动汽车驾驶程序的书写，以便可以根据红绿灯状态正确行驶。
         test1();

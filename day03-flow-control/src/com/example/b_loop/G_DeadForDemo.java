@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class DeadForDemo7 {
+public class G_DeadForDemo {
     public static void main(String[] args) {
         // 目标：掌握死循环的写法
         test();

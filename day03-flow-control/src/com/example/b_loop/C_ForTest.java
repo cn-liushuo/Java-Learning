@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class ForTest3 {
+public class C_ForTest {
     public static void main(String[] args) {
         // 目标：求奇数和
         System.out.println("1-10的奇数和是：" + sum(10));

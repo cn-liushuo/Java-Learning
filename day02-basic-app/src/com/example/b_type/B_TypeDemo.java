@@ -1,6 +1,6 @@
 package com.example.b_type;
 
-public class TypeDemo2 {
+public class B_TypeDemo {
     public static void main(String[] args) {
         // 目标：理解表达式的自动类型提升。
         int result = calc2((byte) 110, (byte) 120);

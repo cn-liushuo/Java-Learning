@@ -1,6 +1,6 @@
 package com.example.e_variable;
 
-public class VariableDemo2 {
+public class B_VariableDemo {
     public static void main(String[] args) {
         // 目标：掌握8种基本数据类型定义变量。
         printVariable();

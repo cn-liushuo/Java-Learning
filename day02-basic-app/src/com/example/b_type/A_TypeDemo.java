@@ -1,8 +1,6 @@
 package com.example.b_type;
 
-import org.w3c.dom.ls.LSOutput;
-
-public class TypeDemo1 {
+public class A_TypeDemo {
     public static void main(String[] args) {
         // 目标：认识自动类型转换，强制类型转换。
         byte a = 12;

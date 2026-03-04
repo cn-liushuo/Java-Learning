@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class ForTest2 {
+public class B_ForTest {
     public static void main(String[] args) {
         // 目标：完成for循环求和的案例
         System.out.println("1到5的和是：" + sum(5));

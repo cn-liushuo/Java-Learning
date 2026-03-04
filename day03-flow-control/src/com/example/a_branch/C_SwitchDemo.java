@@ -2,7 +2,7 @@ package com.example.a_branch;
 
 import java.util.Scanner;
 
-public class SwitchDemo3 {
+public class C_SwitchDemo {
     public static void main(String[] args) {
         // 目标：搞清楚switch分支结构的应用和书写，理解其执行流程。
         test1();

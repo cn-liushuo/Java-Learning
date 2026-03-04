@@ -1,6 +1,6 @@
 package com.example.d_operator;
 
-public class OperatorDemo2 {
+public class B_OperatorDemo {
     public static void main(String[] args) {
         // 目标：理解自增自减运算符
         print(10);

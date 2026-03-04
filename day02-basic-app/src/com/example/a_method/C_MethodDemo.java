@@ -1,6 +1,6 @@
 package com.example.a_method;
 
-public class MethodDemo3 {
+public class C_MethodDemo {
     public static void main(String[] args) {
         // 目标：掌握在无返回值的的方法中单独使用return;：提前结束方法
         div(10, 0);

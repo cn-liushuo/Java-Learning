@@ -2,7 +2,7 @@ package com.example.a_branch;
 
 import java.util.Scanner;
 
-public class IfDemo1 {
+public class A_IfDemo {
     public static void main(String[] args) {
         // 目标，认识if语句，搞清楚写法和应用场景。（独立功能，独立成方法）
         test1();

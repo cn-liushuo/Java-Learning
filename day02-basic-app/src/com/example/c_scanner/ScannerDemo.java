@@ -4,7 +4,7 @@ package com.example.c_scanner;
 
 import java.util.Scanner;
 
-public class ScannerDemo1 {
+public class ScannerDemo {
     public static void main(String[] args) {
         printUserInfo();
     }

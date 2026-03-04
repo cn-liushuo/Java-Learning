@@ -1,6 +1,6 @@
 package com.example.b_loop;
 
-public class WhileTest5 {
+public class E_WhileTest {
     public static void main(String[] args) {
         // 目标：完成while循环的需求：复利计算。
         System.out.println("需要多少年：" + calc());
