@@ -15,7 +15,7 @@ public class ForDemo1 {
          * 接着判断循环条件 2 < 3，成立，执行循环体输出第三行Hello World，然乎执行 i++，i = 3
          * 接着判断循环条件 3 < 3，不成立，循环结束。
          */
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Hello World");
         }
 
@@ -25,10 +25,10 @@ public class ForDemo1 {
             // i = 1,2,3,4,5
             System.out.println("Hello World!");
         }
-        
+
         System.out.println("====================================");
 
-        for (int i = 1; i <= 9; i+=2) {
+        for (int i = 1; i <= 9; i += 2) {
             // i = 1,3,5,7,9
             System.out.println("Hello World!");
         }
