@@ -18,6 +18,7 @@ public class ForDemo1 {
         for (int i = 0; i < 3; i++) {
             System.out.println("Hello World");
         }
+        // System.out.println(i); // 报错
 
         System.out.println("====================================");
 

@@ -12,5 +12,6 @@ public class WhileDemo4 {
             System.out.println("Hello World！");
             i++;
         }
+        System.out.println(i); // 3
     }
 }
