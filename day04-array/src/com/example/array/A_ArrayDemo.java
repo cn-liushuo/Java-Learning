@@ -15,8 +15,11 @@ public class A_ArrayDemo {
 
 
         // 2. 随机获取一个索引值
-        int index = (int) (Math.random() * names.length);
-        // 3. 根据索引值，获取数组中的元素
+        // Math.random() : [0, 1） 之间的小数
+        // names.length : 元素个数：8
+        int index = (int) (Math.random() * names.length); // [0, 15) - [0, 14]
+
+        // 3. 根据索引值，获取数组中的元素：数组名[索引值]
         String name = names[index];
         System.out.println(name);
     }
