@@ -26,14 +26,28 @@ public class B_ArrayDemo {
         }
 
         // 3、遍历数组，统计总分，统计最高分，统计最低分
-        double allScore = 0;
+        double allScore = scores[0];
+        double maxScore = scores[0];
+        double minScore = scores[0];
         for (int i = 0; i < scores.length; i++) {
             // i = 0 1 2 3 4 5 6 7
             double score = scores[i];
             // 4、累加当前遍历到的分数
             allScore += score;
+
+            // 5、找出最高分
+            if (scores[i] > maxScore) {
+                maxScore = scores[i];
+            }
+
+            // 6、找出最低分
+            if (scores[i] < minScore) {
+                minScore = scores[i];
+            }
         }
         System.out.println("总分：" + allScore);
         System.out.println("平均分：" + (allScore / scores.length));
+        System.out.println("最高分：" + maxScore);
+        System.out.println("最低分：" + minScore);
     }
 }
