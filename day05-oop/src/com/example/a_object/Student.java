@@ -1,4 +1,4 @@
-package com.example.object;
+package com.example.a_object;
 // 学生类
 // 封装：把数据和对数据的处理放到同一个类中去
 public class Student {

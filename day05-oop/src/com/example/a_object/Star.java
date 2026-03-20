@@ -1,4 +1,4 @@
-package com.example.object;
+package com.example.a_object;
 // 明星类，明星对象模板
 public class Star {
     String name;

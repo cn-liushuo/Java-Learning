@@ -1,4 +1,4 @@
-package com.example.constructor;
+package com.example.b_constructor;
 
 public class Student {
     String name;
@@ -15,7 +15,9 @@ public class Student {
         System.out.println("==========有参数String n构造器执行了==========");
     }
 
-    public Student(String n, int a) {
-
+    public Student(String n, int a, char s) {
+        name = n;
+        age = a;
+        sex = s;
     }
 }

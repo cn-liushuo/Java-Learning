@@ -1,4 +1,4 @@
-package com.example.object;
+package com.example.a_object;
 
 public class B_Test {
     public static void main(String[] args) {
