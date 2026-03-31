@@ -24,5 +24,12 @@ class Zi extends Fu {
         System.out.println(name); // show的name
         System.out.println(this.name); // zi的name
         System.out.println(super.name); // fu的name
+
+        run(); // 子类的
+        super.run(); // 父类的
+    }
+
+    public void run() {
+        System.out.println("zi的run方法");
     }
 }
