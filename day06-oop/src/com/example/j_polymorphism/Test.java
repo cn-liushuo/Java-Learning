@@ -12,7 +12,7 @@ public class Test {
         Tortoise t1 = (Tortoise) a1;
         t1.shrinkHead();
 
-        // 有继承关系就可以强制装欢，编译阶段不会报错！
+        // 有继承关系就可以强制转换，编译阶段不会报错！
         // 运行时可能会出现类型转换异常：ClassCastException
         // Wolf w1 = (Wolf) a1;
 
