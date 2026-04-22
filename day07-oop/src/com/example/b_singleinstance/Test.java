@@ -1,4 +1,4 @@
-package com.example.singleinstance;
+package com.example.b_singleinstance;
 
 public class Test {
     public static void main(String[] args) {

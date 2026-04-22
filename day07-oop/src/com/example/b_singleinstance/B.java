@@ -1,4 +1,4 @@
-package com.example.singleinstance;
+package com.example.b_singleinstance;
 
 // 设计成单例设计模式 -- 懒汉式单例
 public class B {
