@@ -27,6 +27,13 @@ Java学习仓库
 4.  新建 Pull Request
 
 
+#### 修订记录
+
+| 日期 | 说明 |
+|------|------|
+| 2026-05-28 | day07-oop：在 `A_Test.java` 中创建 10 条学生测试数据（姓名、性别、成绩） |
+| 2026-05-28 | day07-oop：将 `A_Test.java` 测试数据姓名改为国产影视主角名 |
+
 #### 特技
 
 1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
