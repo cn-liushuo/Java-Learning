@@ -73,6 +73,8 @@ public class LoginUI extends JFrame implements ActionListener {
         passwordField = new JPasswordField();
         passwordField.setBounds(160, 150, 190, 30);
         passwordField.setFont(customFont);
+        // 设置密码字符为星号，确保在所有字体下都能正确显示
+        passwordField.setEchoChar('*');
         panel.add(passwordField);
 
         // 登录按钮
