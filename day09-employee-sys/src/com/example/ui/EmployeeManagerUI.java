@@ -1,5 +1,7 @@
 package com.example.ui;
 
+import com.example.bean.Employee;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -8,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class EmployeeManagerUI extends JFrame {
@@ -15,8 +18,15 @@ public class EmployeeManagerUI extends JFrame {
     private JTable table; // 表格
     private DefaultTableModel model; // 表格模型：封装表格数据的对象
     private JTextField nameTextFieldSearch; // 搜索输入框
+    // 准备一个静态集合对象，用户存储系统中的全部员工对象信息。
+    private static ArrayList<Employee> employees = new ArrayList<>();
 
     public EmployeeManagerUI() {
+
+    }
+
+    public EmployeeManagerUI(String username) {
+        super("欢迎" + username + "进入人事信息管理界面");
         frame = this;
         initialize();
         this.setVisible(true);
@@ -107,11 +117,8 @@ public class EmployeeManagerUI extends JFrame {
         });
 
         // 添加按钮监听器
-        btnAdd.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // 这里可以添加添加新员工的逻辑
-            }
+        btnAdd.addActionListener(e -> {
+            new AddEmployeeUI(model);
         });
 
         this.getContentPane().add(topPanel, BorderLayout.NORTH);

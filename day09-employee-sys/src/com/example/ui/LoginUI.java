@@ -127,7 +127,7 @@ public class LoginUI extends JFrame implements ActionListener {
                 // 登录成功
                 System.out.println("登录成功!");
                 // 跳转到员工管理界面
-                new EmployeeManagerUI();
+                new EmployeeManagerUI(user.getUsername());
                 this.dispose(); // 关闭当前登录界面
             } else {
                 // 密码错误
