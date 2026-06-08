@@ -16,6 +16,9 @@ public class MainFrame extends JFrame {
             {9, 10, 11, 12},
             {13, 14, 15, 0}
     };
+    // 定义两个整数变量记录当前空白色块的位置
+    private int row; // 行索引
+    private int col; // 列索引
 
     public MainFrame() {
         // 1、调用一个初始化方法：初始化窗口大小等信息。
@@ -69,19 +72,54 @@ public class MainFrame extends JFrame {
         // 判断图片的方向，再控制图片移动
         switch (r) {
             case UP:
-                System.out.println("上");
+                // 上交换的跳转是行数必须 < 3
+                if (row < imageData.length - 1) {
+                    // 当前空白色块位置: row col
+                    // 需要被交换的位置: row + 1 col
+                    int temp = imageData[row][col];
+                    imageData[row][col] = imageData[row + 1][col];
+                    imageData[row + 1][col] = temp;
+                    // 更新当前空白色块的位置
+                    row++;
+                }
                 break;
             case DOWN:
-                System.out.println("下");
+                if (row > 0) {
+                    // 当前空白色块位置: row col
+                    // 需要被交换的位置: row + 1 col
+                    int temp = imageData[row][col];
+                    imageData[row][col] = imageData[row - 1][col];
+                    imageData[row - 1][col] = temp;
+                    // 更新当前空白色块的位置
+                    row--;
+                }
                 break;
             case LEFT:
-                System.out.println("左");
+                // 左交换的条件是空白色块的列必须小于3
+                if (col < imageData.length - 1) {
+                    // 当前空白色块位置: row col
+                    // 需要被交换的位置: row col + 1
+                    int temp = imageData[row][col];
+                    imageData[row][col] = imageData[row][col + 1];
+                    imageData[row][col + 1] = temp;
+                    // 更新当前空白色块的位置
+                    col++;
+                }
                 break;
             case RIGHT:
-                System.out.println("右");
+                if (col > 0) {
+                    // 当前空白色块位置: row col
+                    // 需要被交换的位置: row col - 1
+                    int temp = imageData[row][col];
+                    imageData[row][col] = imageData[row][col - 1];
+                    imageData[row][col - 1] = temp;
+                    // 更新当前空白色块的位置
+                    col--;
+                }
                 break;
         }
-
+        // 重新刷新界面！！！
+        initImage();
     }
 
     private void initRandomArray() {
@@ -98,6 +136,20 @@ public class MainFrame extends JFrame {
                 int temp = imageData[i][j];
                 imageData[i][j] = imageData[k][n];
                 imageData[k][n] = temp;
+            }
+        }
+
+        // 定位空白色块的位置。
+        // 去二维数组中遍历每个数据，只要发现这个数据等于0，那么这个位置就是当前空白色块的位置
+        OUT:
+        for (int i = 0; i < imageData.length; i++) {
+            for (int j = 0; j < imageData[i].length; j++) {
+                if (imageData[i][j] == 0) {
+                    // 定位到空白色块的位置
+                    row = i;
+                    col = j;
+                    break OUT; // 跳出循环
+                }
             }
         }
     }
@@ -121,6 +173,9 @@ public class MainFrame extends JFrame {
     }
 
     private void initImage() {
+        // 先清空窗口上的全部图层
+        this.getContentPane().removeAll();
+
         // 1、展示一个行列矩阵的图片色块依次铺满窗口(4 * 4)
         for (int i = 0; i < imageData.length; i++) {
             for (int j = 0; j < imageData[i].length; j++) {
@@ -141,6 +196,9 @@ public class MainFrame extends JFrame {
         JLabel background = new JLabel(new ImageIcon(imagePath + "background.png"));
         background.setBounds(0, 0, 450, 484);
         this.add(background);
+
+        // 刷新新图层，重新绘制。
+        this.repaint();
     }
 
     private void initFrame() {
