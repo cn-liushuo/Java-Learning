@@ -63,7 +63,7 @@ public class EmployeeManagerUI extends JFrame {
         table.setRowHeight(30);
 
         // 添加数据到表格
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             model.addRow(new Object[]{i + 1, "员工" + (i + 1), "男", 21, "12666666666", "java工程师", new Date().toLocaleString(), 30000, "部门" + (i + 1)});
         }
 
@@ -118,10 +118,18 @@ public class EmployeeManagerUI extends JFrame {
 
         // 添加按钮监听器
         btnAdd.addActionListener(e -> {
-            new AddEmployeeUI(model);
+            // 弹出一个添加员工信息的界面出来。
+            new AddEmployeeUI(this);
         });
 
         this.getContentPane().add(topPanel, BorderLayout.NORTH);
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+    }
+
+    public void addEmployee(Employee employee) {
+        // 添加到集合，展示到表格
+        employees.add(employee);
+        // 添加一行数据
+        model.addRow(new Object[]{employee.getId(), employee.getName(), employee.getSex(), employee.getAge(), employee.getPhone(), employee.getPosition(), employee.getEntryDate(), employee.getSalary(), employee.getDepartment()});
     }
 }
