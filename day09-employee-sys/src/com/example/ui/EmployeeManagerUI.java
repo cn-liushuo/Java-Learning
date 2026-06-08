@@ -62,11 +62,6 @@ public class EmployeeManagerUI extends JFrame {
         JScrollPane scrollPane = new JScrollPane(table);
         table.setRowHeight(30);
 
-        // 添加数据到表格
-        for (int i = 0; i < 2; i++) {
-            model.addRow(new Object[]{i + 1, "员工" + (i + 1), "男", 21, "12666666666", "java工程师", new Date().toLocaleString(), 30000, "部门" + (i + 1)});
-        }
-
         // 右键菜单
         JPopupMenu popupMenu = new JPopupMenu();
         JMenuItem editItem = new JMenuItem("编辑");
@@ -96,16 +91,15 @@ public class EmployeeManagerUI extends JFrame {
             }
         });
 
-        deleteItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = table.getSelectedRow();
+        deleteItem.addActionListener(e -> {
+            int selectedRow = table.getSelectedRow(); // 获取选中的行索引
                 if (selectedRow >= 0) {
                     int id = (Integer) model.getValueAt(selectedRow, 0); // 假设ID在第一列
-                    JOptionPane.showMessageDialog(frame, "删除 ID：" + id);
-                    // 这里可以添加删除逻辑，比如冲模型中移除该行
+                    // JOptionPane.showMessageDialog(frame, "删除 ID：" + id);
+                    // 这里可以添加删除逻辑，比如从模型中移除该行
+                    deleteEmployee(id);
+                    model.removeRow(selectedRow); // 删除当前行
                 }
-            }
         });
 
         // 搜索按钮监听器
@@ -124,6 +118,17 @@ public class EmployeeManagerUI extends JFrame {
 
         this.getContentPane().add(topPanel, BorderLayout.NORTH);
         this.getContentPane().add(scrollPane, BorderLayout.CENTER);
+    }
+
+    private void deleteEmployee(int id) {
+        // 从集合中删除该员工对象。
+        for (int i = 0; i < employees.size(); i++) {
+            Employee employee = employees.get(i);
+            if (employee.getId() == id) {
+                employees.remove(i);
+                break;
+            }
+        }
     }
 
     public void addEmployee(Employee employee) {
