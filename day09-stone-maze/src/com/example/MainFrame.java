@@ -1,6 +1,7 @@
 package com.example;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class MainFrame extends JFrame {
     // 定义两个整数变量记录当前空白色块的位置
     private int row; // 行索引
     private int col; // 列索引
+    private int count; // 统计总共移动到步数
 
     public MainFrame() {
         // 1、调用一个初始化方法：初始化窗口大小等信息。
@@ -88,6 +90,7 @@ public class MainFrame extends JFrame {
                     imageData[row + 1][col] = temp;
                     // 更新当前空白色块的位置
                     row++;
+                    count++;
                 }
                 break;
             case DOWN:
@@ -99,6 +102,7 @@ public class MainFrame extends JFrame {
                     imageData[row - 1][col] = temp;
                     // 更新当前空白色块的位置
                     row--;
+                    count++;
                 }
                 break;
             case LEFT:
@@ -111,6 +115,7 @@ public class MainFrame extends JFrame {
                     imageData[row][col + 1] = temp;
                     // 更新当前空白色块的位置
                     col++;
+                    count++;
                 }
                 break;
             case RIGHT:
@@ -122,6 +127,7 @@ public class MainFrame extends JFrame {
                     imageData[row][col - 1] = temp;
                     // 更新当前空白色块的位置
                     col--;
+                    count++;
                 }
                 break;
         }
@@ -130,7 +136,7 @@ public class MainFrame extends JFrame {
     }
 
     private void initRandomArray() {
-        // 打乱二维数组中的元素顺序。
+        // 打乱二维数组中的元素顺序。（这个随机算法目前有bug）
         for (int i = 0; i < imageData.length; i++) {
             for (int j = 0; j < imageData[i].length; j++) {
                 // 随机两个行列位置，让这两个位置交换。
@@ -173,7 +179,10 @@ public class MainFrame extends JFrame {
         JMenuItem restartJi = new JMenuItem("重启");
         menu.add(restartJi);
         restartJi.addActionListener(e -> {
-            // 重启游戏。
+            // 重启游戏：重新打乱二维数组中的顺序，重新刷新界面
+            count = 0; // 恢复步数为0
+            initRandomArray();
+            initImage();
         });
         menuBar.add(menu); // 添加到菜单条中
         this.setJMenuBar(menuBar);
@@ -182,6 +191,17 @@ public class MainFrame extends JFrame {
     private void initImage() {
         // 先清空窗口上的全部图层
         this.getContentPane().removeAll();
+
+        // 刷新界面时，可以给界面显示步数：
+        // 给窗口添加一个展示文字的组件
+        JLabel countTxt = new JLabel("当前移动" + count + "步");
+        countTxt.setBounds(30, 20, 140, 20);
+        // 把文字展示成红色
+        countTxt.setForeground(Color.RED);
+        // 加粗
+        countTxt.setFont(new Font("楷体", Font.BOLD, 16));
+        this.add(countTxt);
+
 
         // 判断是否赢了。
         if (isWin()) {
