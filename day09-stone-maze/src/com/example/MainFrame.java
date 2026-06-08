@@ -18,6 +18,8 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         // 1、调用一个初始化方法：初始化窗口大小等信息。
         initFrame();
+        // 4、打乱数字色块的顺序，再展示图片
+        initRandomArray();
         // 2、初始化界面：展示数字色块。
         initImage();
         // 3、初始化系统菜单：展示点击弹出菜单信息是系统退出，重启游戏
@@ -25,6 +27,24 @@ public class MainFrame extends JFrame {
 
         // 设置窗口的显示
         this.setVisible(true);
+    }
+
+    private void initRandomArray() {
+        // 打乱二维数组中的元素顺序。
+        for (int i = 0; i < imageData.length; i++) {
+            for (int j = 0; j < imageData[i].length; j++) {
+                // 随机两个行列位置，让这两个位置交换。
+                int m = (int) (Math.random() * imageData.length);
+                int n = (int) (Math.random() * imageData[i].length);
+
+                int k = (int) (Math.random() * imageData.length);
+                int o = (int) (Math.random() * imageData[i].length);
+
+                int temp = imageData[i][j];
+                imageData[i][j] = imageData[k][n];
+                imageData[k][n] = temp;
+            }
+        }
     }
 
     private void initMenu() {
