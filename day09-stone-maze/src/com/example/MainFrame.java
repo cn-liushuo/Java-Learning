@@ -1,6 +1,8 @@
 package com.example;
 
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 // 自定义窗口类，创建对象，展示一个主窗口。
@@ -25,8 +27,61 @@ public class MainFrame extends JFrame {
         // 3、初始化系统菜单：展示点击弹出菜单信息是系统退出，重启游戏
         initMenu();
 
+        // 5、给当前窗口绑定上下左右按键事件。
+        initKeyPressEvent();
+
         // 设置窗口的显示
         this.setVisible(true);
+    }
+
+    private void initKeyPressEvent() {
+        // 给当前窗口绑定上下左右按键事件
+        this.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // 获取当前按键的编号
+                int keyCode = e.getKeyCode();
+                // 判断这个编号是否是上下左右的按键
+                switch (keyCode) {
+                    case KeyEvent.VK_UP:
+                        // 用户按了上建，让图片向上移动。
+                        switchAndMove(Direction.UP);
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        // 用户按了下键，让图片向下移动。
+                        switchAndMove(Direction.DOWN);
+                        break;
+                    case KeyEvent.VK_LEFT:
+                        // 用户按了左键，让图片向左移动。
+                        switchAndMove(Direction.LEFT);
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        // 用户按了右键，让图片向右移动。
+                        switchAndMove(Direction.RIGHT);
+                        break;
+                }
+            }
+        });
+    }
+
+    // 控制数据交换和图片移动
+    private void switchAndMove(Direction r) {
+        // 判断图片的方向，再控制图片移动
+        switch (r) {
+            case UP:
+                System.out.println("上");
+                break;
+            case DOWN:
+                System.out.println("下");
+                break;
+            case LEFT:
+                System.out.println("左");
+                break;
+            case RIGHT:
+                System.out.println("右");
+                break;
+        }
+
     }
 
     private void initRandomArray() {
