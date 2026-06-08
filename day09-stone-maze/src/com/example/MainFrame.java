@@ -16,6 +16,13 @@ public class MainFrame extends JFrame {
             {9, 10, 11, 12},
             {13, 14, 15, 0}
     };
+    // 定一个一个二维数组，用来存储队中游戏成功的数据顺序。
+    private int[][] winData = new int[][]{
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 0}
+    };
     // 定义两个整数变量记录当前空白色块的位置
     private int row; // 行索引
     private int col; // 列索引
@@ -176,6 +183,14 @@ public class MainFrame extends JFrame {
         // 先清空窗口上的全部图层
         this.getContentPane().removeAll();
 
+        // 判断是否赢了。
+        if (isWin()) {
+            // 展示胜利的图片
+            JLabel label = new JLabel(new ImageIcon(imagePath + "win.png"));
+            label.setBounds(124, 230, 266, 88);
+            this.add(label);
+        }
+
         // 1、展示一个行列矩阵的图片色块依次铺满窗口(4 * 4)
         for (int i = 0; i < imageData.length; i++) {
             for (int j = 0; j < imageData[i].length; j++) {
@@ -199,6 +214,19 @@ public class MainFrame extends JFrame {
 
         // 刷新新图层，重新绘制。
         this.repaint();
+    }
+
+    private boolean isWin() {
+        // 判断游戏二维数组和赢了之后的二维数组的内容是否一样，只要有一个位置处的数据不一样，说明没有赢
+        for (int i = 0; i < imageData.length; i++) {
+            for (int j = 0; j < imageData[i].length; j++) {
+                if (imageData[i][j] != winData[i][j]) {
+                    return false;
+                }
+            }
+        }
+        // 赢了
+        return true;
     }
 
     private void initFrame() {
