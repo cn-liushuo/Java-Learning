@@ -1,4 +1,4 @@
-package com.example.a_demo.exception;
+package com.example.a_demo.a_exception;
 
 public class B_ExceptionDemo {
     public static void main(String[] args) {
