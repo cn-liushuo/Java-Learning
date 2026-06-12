@@ -1,4 +1,4 @@
-package com.example.a_demo.a_exception;
+package com.example.a_exception;
 
 /**
  * 自定义的编译时异常

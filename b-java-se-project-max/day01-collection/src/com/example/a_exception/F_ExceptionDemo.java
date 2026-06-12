@@ -1,4 +1,4 @@
-package com.example.a_demo.a_exception;
+package com.example.a_exception;
 
 import java.io.FileInputStream;
 import java.io.InputStream;

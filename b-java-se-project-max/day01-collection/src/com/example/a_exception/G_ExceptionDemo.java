@@ -1,4 +1,4 @@
-package com.example.a_demo.a_exception;
+package com.example.a_exception;
 
 import java.util.Scanner;
 
