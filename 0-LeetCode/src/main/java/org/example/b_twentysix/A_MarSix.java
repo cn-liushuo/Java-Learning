@@ -1,4 +1,4 @@
-package cn.leetcode.b_twentysix;
+package org.example.b_twentysix;
 
 import java.nio.charset.StandardCharsets;
 

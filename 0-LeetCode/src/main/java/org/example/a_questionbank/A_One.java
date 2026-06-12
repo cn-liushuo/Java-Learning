@@ -1,4 +1,4 @@
-package cn.leetcode.a_questionbank;
+package org.example.a_questionbank;
 
 import java.util.Arrays;
 import java.util.HashMap;
